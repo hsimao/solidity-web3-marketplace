@@ -1,13 +1,18 @@
+import BaseLayout from "@components/layout/baseLayout";
 import { Modal } from "@components/common";
 import { CourseHero, Curriculum, Keypoints } from "@components/course";
 
 export default function Course() {
   return (
-    <div className="relative max-w-7xl mx-auto px-4">
-      <CourseHero />
+    <>
+      <div className="py-4">
+        <CourseHero />
+      </div>
       <Keypoints />
       <Curriculum />
       <Modal />
-    </div>
+    </>
   );
 }
+
+Course.Layout = BaseLayout;
