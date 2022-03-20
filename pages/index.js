@@ -1,6 +1,6 @@
-import BaseLayout from "@components/layout/baseLayout";
-import { Hero } from "@components/common";
-import { CourseList } from "@components/course";
+import BaseLayout from "@components/ui/layout/baseLayout";
+import { Hero } from "@components/ui/common";
+import { CourseList } from "@components/ui/course";
 import { getAllCourse } from "@content/courses/fetcher";
 
 export default function Home({ courses }) {
