@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 
+// keccak-256
 const adminAddresses = {
-  "0xC7119CDb526370D772Cc60311441C523bF5a70D7": true
+  "0x746769432692ec0b39a73e4ea35d4de8e9b6eb7705d11b50065333c0d8ceda5a": true
 };
 
 export const handler = (web3, provider) => () => {
@@ -24,7 +25,7 @@ export const handler = (web3, provider) => () => {
   return {
     account: {
       data,
-      isAdmin: (data && adminAddresses[data]) ?? false,
+      isAdmin: (data && adminAddresses[web3.utils.keccak256(data)]) ?? false,
       mutate,
       ...rest
     }
