@@ -1,5 +1,5 @@
 import BaseLayout from "@components/ui/layout/baseLayout";
-import { CourseList } from "@components/ui/course";
+import { CourseList, CourseCard } from "@components/ui/course";
 import { WalletBar } from "@components/ui/web3";
 import { getAllCourse } from "@content/courses/fetcher";
 import { useAccount } from "@components/hooks/web3/useAccount";
@@ -14,7 +14,9 @@ export default function Marketplace({ courses }) {
       <div className="py-4">
         <WalletBar address={account.data} network={network.data} />
       </div>
-      <CourseList courses={courses} />
+      <CourseList courses={courses}>
+        {(course) => <CourseCard key={course.id} course={course} />}
+      </CourseList>
     </>
   );
 }
