@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import Link from "next/link";
 import { Button } from "@components/ui/common";
 import { useWeb3 } from "@components/providers";
-import { useAccount } from "@components/hooks/web3/useAccount";
+import { useAccount } from "@components/hooks/web3";
 import { useRouter } from "next/router";
 
 export default function Navbar() {
