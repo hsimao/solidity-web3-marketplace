@@ -18,7 +18,7 @@ export default function WalletBar({ address, network }) {
             </div>
           </div>
           <div>
-            {!network.isSupported && (
+            {network.hasInitialResponse && !network.isSupported && (
               <div className="bg-red-400 p-4 rounded-lg">
                 <div>Conneted to wrong Network</div>
                 <div>
@@ -27,7 +27,6 @@ export default function WalletBar({ address, network }) {
                 </div>
               </div>
             )}
-
             {network.data && (
               <div>
                 <span>Currently on </span>
