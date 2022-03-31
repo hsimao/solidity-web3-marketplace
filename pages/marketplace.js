@@ -1,6 +1,7 @@
 import BaseLayout from "@components/ui/layout/baseLayout";
 import { CourseList, CourseCard } from "@components/ui/course";
 import { WalletBar } from "@components/ui/web3";
+import { Button } from "@components/ui/common";
 import { getAllCourse } from "@content/courses/fetcher";
 import { useAccount, useNetwork } from "@components/hooks/web3";
 
@@ -14,7 +15,17 @@ export default function Marketplace({ courses }) {
         <WalletBar address={account.data} network={network} />
       </div>
       <CourseList courses={courses}>
-        {(course) => <CourseCard key={course.id} course={course} />}
+        {(course) => (
+          <CourseCard
+            key={course.id}
+            course={course}
+            Footer={() => (
+              <div>
+                <Button variant="lightPurple">Purchase</Button>
+              </div>
+            )}
+          />
+        )}
       </CourseList>
     </>
   );
